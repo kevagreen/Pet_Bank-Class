@@ -23,7 +23,6 @@ public class Pet {
         System.out.println("Here's your pet info " + pet.toString().replace("{", "").replace("]",""));
     }
 
-
     //getters
     public String getPetName() { return name; }
 
@@ -43,11 +42,10 @@ public class Pet {
 
     @Override
     public String toString() {
-        return "Pet{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", location='" + location + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+        return ":{" +
+                '\n' +"name - " + name + '\n' +
+                "age - " + age + '\n' +
+                "location - " + location + '\n' +
+                "type - " + type;
     }
 }//end class

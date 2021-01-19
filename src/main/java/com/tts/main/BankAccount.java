@@ -8,11 +8,12 @@ public class BankAccount {
     private static int accountNumber;
     private static double accountBalances;
     private static final BankAccount checking = new BankAccount();
-    private static final BankAccount savings = new BankAccount();
-
-    private static GUI runAccount = new GUI();
+    private static final GUI pinNum = new GUI();
+    private static final GUI runAccount = new GUI();
     String name;
+
     public static void main(String[] args) {
+        //pinNum.enterPin();
         checking.setAccountHolder("Bernie Mac");
         checking.setAccountNumber(1004040232);
         checking.setAccountBalances(101_210.32);
@@ -23,21 +24,11 @@ public class BankAccount {
         double balance = checking.getAccountBalances();
         JLabel accountBalLabel = new JLabel(String.valueOf(balance));
         runAccount.createGUI(accountNameLabel, accountNumberLabel, accountBalLabel);
-
-
+        printAccountDetails(checking);
     }
 
-    public BankAccount() { }
-
-//    public static void labels(String name, int account, double balance){
-//        name = checking.getAccountHolder();
-//        JLabel accountNameLabel = new JLabel(name);
-//        account = checking.getAccountNumber();
-//        JLabel accountNumberLabel = new JLabel(String.valueOf(account));
-//        balance = checking.getAccountBalances();
-//        JLabel accountBalLabel = new JLabel(String.valueOf(balance));
-//
-//    }
+    public BankAccount() {
+    }
 
     public static void printAccountDetails(BankAccount c) {
         System.out.println(" " + c.toString().replace("{", "").replace("}", "").replace("=", ":"));
@@ -45,18 +36,30 @@ public class BankAccount {
     }
 
     //setters
-    public void setAccountHolder(String accountHolder) { BankAccount.accountHolder = accountHolder; }
+    public void setAccountHolder(String accountHolder) {
+        BankAccount.accountHolder = accountHolder;
+    }
 
-    public void setAccountNumber(int accountNumber) { BankAccount.accountNumber = accountNumber; }
+    public void setAccountNumber(int accountNumber) {
+        BankAccount.accountNumber = accountNumber;
+    }
 
-    public void setAccountBalances(double accountBalances) { BankAccount.accountBalances = accountBalances; }
+    public void setAccountBalances(double accountBalances) {
+        BankAccount.accountBalances = accountBalances;
+    }
 
     //getters
-    public String getAccountHolder() { return accountHolder; }
+    public String getAccountHolder() {
+        return accountHolder;
+    }
 
-    public int getAccountNumber() { return accountNumber; }
+    public int getAccountNumber() {
+        return accountNumber;
+    }
 
-    public double getAccountBalances() { return accountBalances; }
+    public double getAccountBalances() {
+        return accountBalances;
+    }
 
     @Override
     public String toString() {
